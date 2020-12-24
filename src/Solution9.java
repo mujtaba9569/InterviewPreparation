@@ -1,4 +1,4 @@
-//
+//O(n)
 class Solution9 {
     public boolean isPalindrome(int x) {
         /*
