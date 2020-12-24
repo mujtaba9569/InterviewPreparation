@@ -1,4 +1,4 @@
-//O(n) 
+//O(n)
 class Solution7 {
     public int reverse(int x) {
         boolean negative = false;
