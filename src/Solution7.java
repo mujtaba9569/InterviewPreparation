@@ -1,38 +1,26 @@
-class Solution9 {
-    public boolean isPalindrome(int x) {
-        /*
-        //if we can try to convert the integer to string .
-        String dup = Integer.toString(x);
-        int i = 0,j = dup.length()-1 ;
-        while (i<j) {
-            if(dup.charAt(i) != dup.charAt(j)) {
-                return false;
-            }
-            i++;
-            j--;
-        }
-        return true;*/
-        
-      //if we were asked not to convert into string 
-      Stack<Integer> pallindrome = new Stack<>();
+//O(n) 
+class Solution7 {
+    public int reverse(int x) {
+        boolean negative = false;
+        String reverse = "";
         if (x < 0) {
-            return false;
+            x = x * (-1);
+            negative = true;
         }
-        int temp = x;
-        while(x!=0) {
+        while(x != 0) {
             int y = x % 10;
             x = x / 10;
-            pallindrome.push(y);
+            reverse = reverse + Integer.toString(y);
+            //reverse = reverse + y;
         }
-        while (temp !=0) {
-            int z = temp % 10 ;
-            temp = temp / 10;
-            int storage = pallindrome.pop();
-            if (z != storage){
-                return false;
+        try {
+            int result = Integer.parseInt(reverse);
+            if (negative) {
+                result = result *(-1);
             }
-                
-        }  
-    return true;
+            return result;
+        } catch (Exception e) {
+            return 0;
+        }
     }
 }
