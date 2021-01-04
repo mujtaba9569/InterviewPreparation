@@ -1,0 +1,17 @@
+class Solution26 
+{
+    public int removeDuplicates(int[] nums) {
+        int pti = 0;
+        int i = pti + 1;
+        while(i < nums.length) {
+            if (nums[pti] == nums[i]) {
+                i++;
+            } else {
+                nums[pti + 1] = nums[i];
+                pti++;
+            }
+        } 
+        System.out.println(pti + 1);
+        return pti + 1;
+}
+}
